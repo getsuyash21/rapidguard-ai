@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("RapidGuard AI Backend Running");
+});
+
 app.post('/analyze', async (req, res) => {
   const { emergencyType } = req.body;
   const prompt = `You are an emergency response AI commander.
